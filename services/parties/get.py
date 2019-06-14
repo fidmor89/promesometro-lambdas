@@ -1,6 +1,5 @@
 import sys
 import logging
-import rds_config
 import pymysql
 import os
 
@@ -18,7 +17,6 @@ query = """
     SELECT PARTY_ID,
     PARTY,
     SECRETARY,
-    FOUNDED,
     FOUNDER,
     SITE_URL,
     LOGO_URL,
@@ -30,7 +28,6 @@ columns = (
            'PARTY_ID',
            'PARTY',
            'SECRETARY',
-           'FOUNDED',
            'FOUNDER',
            'SITE_URL',
            'LOGO_URL',
