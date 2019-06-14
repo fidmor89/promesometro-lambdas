@@ -1,6 +1,5 @@
 import sys
 import logging
-import rds_config
 import pymysql
 import os
 
@@ -23,7 +22,6 @@ except:
 logger.info("SUCCESS: Connection to RDS mysql instance succeeded")
 
 def lambda_handler(event, context):
-
 
     party = event['PARTY']
     short_name = event['SHORT_NAME']
@@ -58,7 +56,6 @@ def lambda_handler(event, context):
         '{description}'
         )
         '''
-    print(query)
     with conn.cursor() as cur:
         cur.execute(query)
         conn.commit()
