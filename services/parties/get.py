@@ -1,4 +1,3 @@
-import json
 import sys
 import logging
 import rds_config
@@ -13,10 +12,28 @@ port = 3306
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-print(rds_host)
-print(name)
-print(password)
-print(db_name)
+query = """
+    SELECT PARTY_ID,
+    PARTY,
+    SECRETARY,
+    FOUNDED,
+    FOUNDER,
+    SITE_URL,
+    LOGO_URL,
+    DESCRIPTION,
+    SHORT_NAME
+    FROM PARTY """
+
+columns = (
+           'PARTY_ID',
+           'PARTY',
+           'SECRETARY',
+           'FOUNDED',
+           'FOUNDER',
+           'SITE_URL',
+           'LOGO_URL',
+           'DESCRIPTION',
+           'SHORT_NAME')
 
 try:
     conn = pymysql.connect(rds_host, user=name, passwd=password, db=db_name, connect_timeout=5)
@@ -27,22 +44,9 @@ except:
 logger.info("SUCCESS: Connection to RDS mysql instance succeeded")
 
 def lambda_handler(event, context):
-    """
-        This function fetches content from MySQL RDS instance
-        """
-
-    item_count = 0
-
     with conn.cursor() as cur:
-        #   cur.execute("create table Employee3 ( EmpID  int NOT NULL, Name varchar(255) NOT NULL, PRIMARY KEY (EmpID))")
-        cur.execute('insert into PARTY (PARTY_ID,PARTY) values(default,"WINAQ2")')
-
-        conn.commit()
-        cur.execute("select * from PARTY")
-        for row in cur:
-            item_count += 1
-            logger.info(row)
-            print(row)
-    conn.commit()
-
-return "Added %d items from RDS MySQL table" %(item_count)
+        cur.execute(query)
+        results = []
+        for row in cur.fetchall():
+            results.append(dict(zip(columns, row)))
+    return results
