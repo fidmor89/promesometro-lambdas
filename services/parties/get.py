@@ -2,12 +2,14 @@ import sys
 import logging
 import rds_config
 import pymysql
+import os
 
-rds_host  = rds_config.db_endpoint
-name = rds_config.db_username
-password = rds_config.db_password
-db_name = rds_config.db_name
-port = 3306
+# Read configuration from enviroment variables.
+rds_host = os.environ['db_endpoint']
+name = os.environ['db_username']
+password = os.environ['db_password']
+db_name = os.environ['db_name']
+port = os.environ['db_port']
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
