@@ -26,7 +26,6 @@ def lambda_handler(event, context):
     party = event['PARTY']
     short_name = event['SHORT_NAME']
     secretary = event['SECRETARY']
-    founded = event['FOUNDED']
     founder = event['FOUNDER']
     site_url = event['SITE_URL']
     logo_url = event['LOGO_URL']
