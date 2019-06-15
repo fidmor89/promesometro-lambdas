@@ -37,7 +37,6 @@ def lambda_handler(event, context):
         PARTY,
         SHORT_NAME,
         SECRETARY,
-        FOUNDED,
         FOUNDER,
         SITE_URL,
         LOGO_URL,
@@ -48,7 +47,6 @@ def lambda_handler(event, context):
         '{party}',
         '{short_name}',
         '{secretary}',
-        '{founded}',
         '{founder}',
         '{site_url}',
         '{logo_url}',
@@ -59,7 +57,7 @@ def lambda_handler(event, context):
         cur.execute(query)
         conn.commit()
 
-    response = {
+    response =    {
         "statusCode": 200,
         "PARTY": party,
         "message": "Party succesfully created",
