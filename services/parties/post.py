@@ -60,9 +60,9 @@ def lambda_handler(event, context):
         cur.execute(query)
         conn.commit()
 
-    thisdict =    {
+    response = {
         "statusCode": 200,
         "PARTY": party,
         "message": "Party succesfully created",
     }
-    return thisdict
+    return response
