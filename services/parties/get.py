@@ -13,16 +13,16 @@ port = os.environ['db_port']
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-query = """
-    SELECT PARTY_ID,
-    PARTY,
-    SECRETARY,
-    FOUNDER,
-    SITE_URL,
-    LOGO_URL,
-    DESCRIPTION,
-    SHORT_NAME
-    FROM PARTY """
+#query = """
+#    SELECT PARTY_ID,
+#    PARTY,
+#    SECRETARY,
+#    FOUNDER,
+#    SITE_URL,
+#    LOGO_URL,
+#    DESCRIPTION,
+#    SHORT_NAME
+#    FROM PARTY """
 
 columns = (
            'PARTY_ID',
@@ -43,9 +43,16 @@ except:
 logger.info("SUCCESS: Connection to RDS mysql instance succeeded")
 
 def lambda_handler(event, context):
+
+    # Create query
+    query = 'SELECT '
+    query += ",".join(map( lambda x: str(x), columns))
+    query += F' FROM PARTY'
+
     with conn.cursor() as cur:
         cur.execute(query)
         results = []
         for row in cur.fetchall():
             results.append(dict(zip(columns, row)))
+        conn.commit()
     return results
