@@ -23,13 +23,53 @@ logger.info("SUCCESS: Connection to RDS mysql instance succeeded")
 
 def lambda_handler(event, context):
 
-    party = event['PARTY']
-    short_name = event['SHORT_NAME']
-    secretary = event['SECRETARY']
-    founder = event['FOUNDER']
-    site_url = event['SITE_URL']
-    logo_url = event['LOGO_URL']
-    description = event['DESCRIPTION']
+    missing_parameter = 'Error - Required parameter is missing:'
+
+    # Required Fields
+    
+    party = None
+    if 'PARTY' in event:
+        party = f"'{event['PARTY']}'"
+    else:
+        raise ValueError(f'{missing_parameter} PARTY')
+        
+    short_name = None
+    if 'SHORT_NAME' in event:
+        short_name = f"'{event['SHORT_NAME']}'"
+    else:
+        raise ValueError(f'{missing_parameter} SHORT_NAME')
+
+    # Optional Fields
+    
+    secretary = None
+    if 'SECRETARY' in event:
+        secretary = f"'{event['SECRETARY']}'"
+    else:
+        secretary = "null"
+        
+    founder = None
+    if 'FOUNDER' in event:
+        founder = f"'{event['FOUNDER']}'"
+    else:
+        founder = "null"
+        
+    site_url = None
+    if 'SITE_URL' in event:
+        site_url = f"'{event['SITE_URL']}'"
+    else:
+        site_url = "null"
+        
+    logo_url = None
+    if 'LOGO_URL' in event:
+        logo_url = f"'{event['LOGO_URL']}'"
+    else:
+        logo_url = "null"
+        
+    description = None
+    if 'DESCRIPTION' in event:
+        description = f"'{event['DESCRIPTION']}'"
+    else:
+        description = "null"
 
     query = f'''
         INSERT INTO PARTY(
@@ -44,13 +84,13 @@ def lambda_handler(event, context):
         )
         VALUES(
         default,
-        '{party}',
-        '{short_name}',
-        '{secretary}',
-        '{founder}',
-        '{site_url}',
-        '{logo_url}',
-        '{description}'
+        {party},
+        {short_name},
+        {secretary},
+        {founder},
+        {site_url},
+        {logo_url},
+        {description}
         )
         '''
     with conn.cursor() as cur:
