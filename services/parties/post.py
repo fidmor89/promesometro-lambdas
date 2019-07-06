@@ -93,13 +93,19 @@ def lambda_handler(event, context):
         {description}
         )
         '''
+
+    queryForId = 'SELECT LAST_INSERT_ID();'
+
     with conn.cursor() as cur:
         cur.execute(query)
+        cur.execute(queryForId)
+        rows = cur.fetchall()
+        inserted_id = rows[0][0]
         conn.commit()
 
     response =    {
         "statusCode": 200,
-        "PARTY": party,
         "message": "Party succesfully created",
+        "ID": inserted_id,
     }
     return response
