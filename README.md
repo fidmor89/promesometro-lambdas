@@ -11,7 +11,10 @@ pip install pymysql --target
 ```
 
 ### To deploy ###
-TBD
+
+```
+./deploy.sh party get
+```
 
 
 ## API-Gateway ##
