@@ -28,16 +28,6 @@ INNER JOIN CANDIDATE C on PM.CANDIDATE_ID = C.CANDIDATE_ID
 INNER JOIN PARTY P ON P.PARTY_ID = C.PARTY_ID
 INNER JOIN POSITION PO ON PO.POSITION_ID = C.POSITION_ID """
 
-columns = (
-           'PROMISE_ID',
-           'PROMISE',
-           'CANDIDATE_ID',
-           'NAME',
-           'PARTY',
-           'PARTY_ID',
-           'POSITION',
-           'POSITION_ID')
-
 try:
     conn = pymysql.connect(rds_host, user=name, passwd=password, db=db_name, connect_timeout=5)
 except:
@@ -49,11 +39,12 @@ logger.info("SUCCESS: Connection to RDS mysql instance succeeded")
 def lambda_handler(event, context):
     with conn.cursor() as cur:
         cur.execute(query)
+
+        rows = cur.fetchall()
+        columns = [t[0] for t in cur.description]
         results = []
-        for row in cur.fetchall():
+        for row in rows:
             results.append(dict(zip(columns, row)))
         conn.commit()
-        print("results:")
-        print(results)
 
     return results
