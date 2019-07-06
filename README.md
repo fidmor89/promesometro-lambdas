@@ -2,6 +2,27 @@
 
 Python lambdas for promesometro project
 
-## Run ##
+## Python lambdas ##
 
-pip install pymysql --target .
+### To get dependencies ###
+
+```
+pip install pymysql --target
+```
+
+### To deploy ###
+
+```
+./deploy.sh party get
+```
+
+
+## API-Gateway ##
+
+### Get configuration ###
+
+```
+aws configure
+
+aws apigateway get-export --parameters extensions='apigateway' --rest-api-id uhwvsjvsme --stage-name dev --export-type swagger promesometro.json
+```

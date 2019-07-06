@@ -45,7 +45,7 @@ logger.info("SUCCESS: Connection to RDS mysql instance succeeded")
 def lambda_handler(event, context):
 
     # Create query
-    query = 'SELECT '
+    query = "SELECT "
     query += ",".join(map( lambda x: str(x), columns))
     query += F' FROM PARTY'
 
@@ -56,3 +56,4 @@ def lambda_handler(event, context):
             results.append(dict(zip(columns, row)))
         conn.commit()
     return results
+
