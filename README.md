@@ -30,5 +30,5 @@ pip install pymysql --target
 ```
 aws configure
 
-aws apigateway get-export --parameters extensions='apigateway' --rest-api-id uhwvsjvsme --stage-name dev --export-type swagger promesometro.json
+aws apigateway get-export --parameters extensions='apigateway' --rest-api-id i2grkc0sea --stage-name dev1 --export-type swagger promesometro.json
 ```
