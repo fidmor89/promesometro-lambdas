@@ -24,13 +24,13 @@ logger.info("SUCCESS: Connection to RDS mysql instance succeeded")
 def lambda_handler(event, context):
 
     partyId = event['partyId']
-    party = event['PARTY']
-    secretary = event['SECRETARY']
-    founder = event['FOUNDER']
-    siteURL = event['SITE_URL']
-    logoURL = event['LOGO_URL']
-    description = event['DESCRIPTION']
-    shortName = event['SHORT_NAME']
+    party = event['body-json']['PARTY']
+    secretary = event['body-json']['SECRETARY']
+    founder = event['body-json']['FOUNDER']
+    siteURL = event['body-json']['SITE_URL']
+    logoURL = event['body-json']['LOGO_URL']
+    description = event['body-json']['DESCRIPTION']
+    shortName = event['body-json']['SHORT_NAME']
 
     query = f'''
         UPDATE PARTY

@@ -23,7 +23,7 @@ logger.info("SUCCESS: Connection to RDS mysql instance succeeded")
 
 def lambda_handler(event, context):
 
-    missing_parameter_message = 'Error - Required parameter is missing:'
+    missing_parameter = 'Error - Required parameter is missing:'
 
     # Required Fields
     
@@ -31,13 +31,13 @@ def lambda_handler(event, context):
     if 'PARTY' in event:
         party = f"'{event['PARTY']}'"
     else:
-        raise ValueError(f'{missing_parameter_message} PARTY')
+        raise ValueError(f'{missing_parameter} PARTY')
         
     short_name = None
     if 'SHORT_NAME' in event:
         short_name = f"'{event['SHORT_NAME']}'"
     else:
-        raise ValueError(f'{missing_parameter_message} SHORT_NAME')
+        raise ValueError(f'{missing_parameter} SHORT_NAME')
 
     # Optional Fields
     
@@ -93,7 +93,7 @@ def lambda_handler(event, context):
         {description}
         )
         '''
-
+        
     queryForId = 'SELECT LAST_INSERT_ID();'
 
     with conn.cursor() as cur:
