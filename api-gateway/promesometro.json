@@ -4,7 +4,7 @@
     "version" : "2019-07-27T03:48:45Z",
     "title" : "Promesometro"
   },
-  "host" : "uhwvsjvsme.execute-api.us-east-1.amazonaws.com",
+  "host" : "i2grkc0sea.execute-api.us-east-1.amazonaws.com",
   "basePath" : "/dev",
   "schemes" : [ "https" ],
   "paths" : {
@@ -22,6 +22,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -32,6 +35,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "passthroughBehavior" : "when_no_match",
@@ -53,6 +59,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -63,6 +72,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "passthroughBehavior" : "when_no_match",
@@ -91,6 +103,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -102,6 +117,9 @@
                 "method.response.header.Access-Control-Allow-Headers" : "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -132,6 +150,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -142,6 +163,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "passthroughBehavior" : "when_no_match",
@@ -170,6 +194,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -180,6 +207,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -211,6 +241,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -222,6 +255,9 @@
                 "method.response.header.Access-Control-Allow-Headers" : "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -246,6 +282,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -256,6 +295,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "passthroughBehavior" : "when_no_match",
@@ -277,6 +319,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -287,6 +332,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "passthroughBehavior" : "when_no_match",
@@ -315,6 +363,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -326,6 +377,9 @@
                 "method.response.header.Access-Control-Allow-Headers" : "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -350,6 +404,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -360,6 +417,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "passthroughBehavior" : "when_no_match",
@@ -425,6 +485,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -436,6 +499,9 @@
                 "method.response.header.Access-Control-Allow-Headers" : "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -467,6 +533,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -477,6 +546,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -508,6 +580,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -518,6 +593,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -549,6 +627,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -560,6 +641,9 @@
                 "method.response.header.Access-Control-Allow-Headers" : "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -584,6 +668,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -594,6 +681,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "passthroughBehavior" : "when_no_match",
@@ -615,6 +705,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -625,6 +718,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "passthroughBehavior" : "when_no_match",
@@ -653,6 +749,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -664,6 +763,9 @@
                 "method.response.header.Access-Control-Allow-Headers" : "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -689,6 +791,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -699,6 +804,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -730,6 +838,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -741,6 +852,9 @@
                 "method.response.header.Access-Control-Allow-Headers" : "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -766,6 +880,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -776,6 +893,9 @@
               "responseParameters" : {
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -796,6 +916,9 @@
             "schema" : {
               "$ref" : "#/definitions/Empty"
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -803,6 +926,9 @@
           "responses" : {
             "default" : {
               "statusCode" : "200"
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
@@ -834,6 +960,9 @@
                 "type" : "string"
               }
             }
+          },
+          "500" : {
+            "description" : "500 response"
           }
         },
         "x-amazon-apigateway-integration" : {
@@ -845,6 +974,9 @@
                 "method.response.header.Access-Control-Allow-Headers" : "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
                 "method.response.header.Access-Control-Allow-Origin" : "'*'"
               }
+            },
+            "Error.*" : {
+              "statusCode" : "500"
             }
           },
           "requestTemplates" : {
