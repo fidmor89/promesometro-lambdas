@@ -10,10 +10,16 @@ Python lambdas for promesometro project
 pip install pymysql --target
 ```
 
-### To deploy ###
+### To deploy a single function ###
 
 ```
 ./deploy.sh party get
+```
+
+### To deploy all functions for a service ###
+
+```
+./deploy.sh party
 ```
 
 
