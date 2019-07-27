@@ -15,17 +15,21 @@ logger.setLevel(logging.INFO)
 
 query = """
 SELECT
-CANDIDATE_ID,
-PARTY_ID,
-POSITION_ID,
-NAME,
-DESCRIPTION,
-SITE_URL,
-TWITTER,
-FACEBOOK,
-STALL,
-PIC_URL
-FROM CANDIDATE """
+C.CANDIDATE_ID,
+C.PARTY_ID,
+C.POSITION_ID,
+C.NAME,
+C.DESCRIPTION,
+C.SITE_URL,
+C.TWITTER,
+C.FACEBOOK,
+C.STALL,
+C.PIC_URL,
+P.PARTY,
+P2.POSITION
+FROM CANDIDATE C
+INNER JOIN PARTY P on C.PARTY_ID = P.PARTY_ID
+INNER JOIN POSITION P2 on C.POSITION_ID = P2.POSITION_ID """
 
 columns = (
            'CANDIDATE_ID',
@@ -36,8 +40,10 @@ columns = (
            'SITE_URL',
            'TWITTER',
            'FACEBOOK',
-		   'STALL',
-		   'PIC_URL')
+       'STALL',
+       'PIC_URL',
+       'PARTY',
+       'POSITION')
 
 try:
     conn = pymysql.connect(rds_host, user=name, passwd=password, db=db_name, connect_timeout=5)
@@ -53,4 +59,5 @@ def lambda_handler(event, context):
         results = []
         for row in cur.fetchall():
             results.append(dict(zip(columns, row)))
+        conn.commit()
     return results
