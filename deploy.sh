@@ -29,7 +29,7 @@ if [ "$1" != "" ]; then
     pip install pymysql -t $PWD
 
     # Create deployment package
-    zip $PACKAGE $FILE PyMySQL-0.9.3.dist-info pymysql
+    zip -r $PACKAGE $FILE PyMySQL-0.9.3.dist-info pymysql
 
     # TODO: Set enviroment variables.
 
