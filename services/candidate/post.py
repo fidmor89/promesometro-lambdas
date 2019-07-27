@@ -31,20 +31,20 @@ def lambda_handler(event, context):
     twitter = event['TWITTER']
     facebook = event['FACEBOOK']
     stall = event['STALL']
-	pic_url = event['PIC_URL']
+    pic_url = event['PIC_URL']
 
     query = f'''
         INSERT INTO CANDIDATE(
         CANDIDATE_ID,
-		PARTY_ID,
-		POSITION_ID,
-		NAME,
-		DESCRIPTION,
-		SITE_URL,
-		TWITTER,
-		FACEBOOK,
-		STALL,
-		PIC_URL
+        PARTY_ID,
+        POSITION_ID,
+        NAME,
+        DESCRIPTION,
+        SITE_URL,
+        TWITTER,
+        FACEBOOK,
+        STALL,
+        PIC_URL
         )
         VALUES(
         default,
@@ -56,7 +56,7 @@ def lambda_handler(event, context):
         '{twitter}',
         '{facebook}',
         '{stall}',
-		'{pic_url}'
+        '{pic_url}'
         )
         '''
     with conn.cursor() as cur:
@@ -65,7 +65,7 @@ def lambda_handler(event, context):
 
     thisdict =    {
         "statusCode": 200,
-        "PARTY": party,
+        "PARTY": name,
         "message": "Party succesfully created",
     }
     return thisdict
